@@ -21,4 +21,41 @@ class GenericViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func setNavigationBar(state: NavigationBarUIState) {
+        switch state {
+        case .withBackText:
+            self.showNavigationBar(isWithBackText: true, isWithEmpty: false)
+        case .withEmpty:
+            self.showNavigationBar(isWithBackText: false, isWithEmpty: true)
+        }
+    }
+    
+    func showNavigationBar(isWithBackText: Bool, isWithEmpty: Bool) {
+        self.navigationItem.setLeftBarButtonItems(nil, animated: false)
+        self.navigationItem.setRightBarButtonItems(nil, animated: false)
+//        let navigationBarHeight = UIApplication.shared.statusBarFrame.size.height +
+//        (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "E5E5E5")
+        if !isWithBackText && isWithEmpty {
+            print("here")
+            //self.navigationController?.view.addSubview(parenetView)
+            
+        }
+        else if isWithBackText && !isWithEmpty {
+            let leftText = UILabel(frame: CGRect(x: 0, y: 5, width: 30, height: 30))
+            leftText.text = "Back"
+            leftText.isUserInteractionEnabled = true
+            let tapLeftText = UITapGestureRecognizer(target: self, action: #selector(self.goBack))
+            leftText.addGestureRecognizer(tapLeftText)
+            let navItem = UIBarButtonItem.init(customView: leftText)
+            self.navigationItem.setLeftBarButtonItems([navItem], animated: true)
+            
+        }
+    }
+    
+    @objc func goBack () {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

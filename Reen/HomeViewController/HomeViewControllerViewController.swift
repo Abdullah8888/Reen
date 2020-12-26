@@ -10,10 +10,14 @@ import UIKit
 
 class HomeViewControllerViewController: GenericViewController {
 
+    @IBOutlet weak var pinImage: UIImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.setNavigationBar(state: .withEmpty)
+        self.pinImage?.layer.borderWidth = 1
+        self.pinImage?.layer.borderColor = UIColor.black.cgColor
     }
 
     
