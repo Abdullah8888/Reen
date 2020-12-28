@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewControllerViewController" customModule="Reen" customModuleProvider="target">
             <connections>
                 <outlet property="pinImage" destination="y15-ii-rlw" id="K7i-vT-Qki"/>
+                <outlet property="rechargeLbl" destination="TMI-Nh-Cun" id="EOM-Ii-7Zl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,8 +26,20 @@
                         <constraint firstAttribute="height" constant="250" id="Zuk-vg-CrE"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vd-uE-T4r">
+                    <rect key="frame" x="129" y="148" width="62" height="0.0"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recharge card here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMI-Nh-Cun">
+                    <rect key="frame" x="30" y="150" width="260" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebs-6T-cab">
-                    <rect key="frame" x="30" y="340" width="260" height="45"/>
+                    <rect key="frame" x="70" y="340" width="180" height="45"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="DeN-T3-yZe"/>
@@ -37,19 +50,28 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="13"/>
+                            <integer key="value" value="17"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scanAction:" destination="-1" eventType="touchUpInside" id="GO3-3v-vwK"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="TMI-Nh-Cun" firstAttribute="top" secondItem="8vd-uE-T4r" secondAttribute="bottom" constant="2" id="71O-5p-LYb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y15-ii-rlw" secondAttribute="trailing" constant="30" id="GNS-ln-750"/>
+                <constraint firstItem="TMI-Nh-Cun" firstAttribute="trailing" secondItem="y15-ii-rlw" secondAttribute="trailing" id="NxH-M2-a65"/>
                 <constraint firstItem="y15-ii-rlw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="RFh-Uv-6Ql"/>
+                <constraint firstItem="8vd-uE-T4r" firstAttribute="leading" secondItem="y15-ii-rlw" secondAttribute="leading" constant="99" id="SMM-MP-PCO"/>
+                <constraint firstItem="8vd-uE-T4r" firstAttribute="trailing" secondItem="y15-ii-rlw" secondAttribute="trailing" constant="-99" id="UJ0-KD-mYI"/>
                 <constraint firstItem="y15-ii-rlw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Zxb-lb-XY9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ebs-6T-cab" secondAttribute="trailing" constant="30" id="lNg-Nz-yPT"/>
-                <constraint firstItem="Ebs-6T-cab" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="nw1-rB-5hp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ebs-6T-cab" secondAttribute="trailing" constant="70" id="lNg-Nz-yPT"/>
+                <constraint firstItem="Ebs-6T-cab" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="nw1-rB-5hp"/>
                 <constraint firstItem="Ebs-6T-cab" firstAttribute="top" secondItem="y15-ii-rlw" secondAttribute="bottom" constant="40" id="u1l-KF-4Aj"/>
+                <constraint firstItem="8vd-uE-T4r" firstAttribute="top" secondItem="y15-ii-rlw" secondAttribute="top" constant="98" id="vEv-X2-pof"/>
+                <constraint firstItem="TMI-Nh-Cun" firstAttribute="leading" secondItem="y15-ii-rlw" secondAttribute="leading" id="whe-WR-dqC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="149"/>

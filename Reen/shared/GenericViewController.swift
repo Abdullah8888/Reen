@@ -8,6 +8,7 @@
 
 import Foundation
 import  UIKit
+import RKDropdownAlert
 
 enum NavigationBarUIState {
     case withBackText
@@ -57,5 +58,9 @@ class GenericViewController: UIViewController {
     
     @objc func goBack () {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    public func displayDropDownAlertWithTitle(title: String, message: String, error: Bool) {
+        RKDropdownAlert.title(title, message: message, backgroundColor: error ? UIColor.init(hex: "f05858") : UIColor.init(hex: "66bb6a"), textColor: UIColor.white, time: 2)
     }
 }

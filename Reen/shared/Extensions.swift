@@ -28,3 +28,18 @@ extension UIColor {
         )
     }
 }
+
+extension String {
+    //Check if string is only numeric only
+    func isValidNumericValueOnly() -> Bool {
+        let numberRegEx  = "[0-9]+"
+        let testCase = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
+        return testCase.evaluate(with: self)
+    }
+}
+
+//MARK: NSNotification Message Identifiers
+extension NSNotification.Name {
+    static let DidGetTextFromCropping = Notification.Name("DidGetTextFromCropping")
+}
+

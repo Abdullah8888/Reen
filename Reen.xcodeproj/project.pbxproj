@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E5C6BD8DFCA454F04D541C1 /* Pods_Reen_ReenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6AFB5EAEB3EC0D6DB6AF54 /* Pods_Reen_ReenUITests.framework */; };
 		7C4AF8852597A1D900582947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AF8842597A1D900582947 /* AppDelegate.swift */; };
 		7C4AF88E2597A1DB00582947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C4AF88D2597A1DB00582947 /* Assets.xcassets */; };
 		7C4AF8912597A1DB00582947 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C4AF88F2597A1DB00582947 /* LaunchScreen.storyboard */; };
@@ -16,6 +17,12 @@
 		7C4AF8BA2597A87300582947 /* HomeViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C4AF8B82597A87300582947 /* HomeViewControllerViewController.xib */; };
 		7C4AF8BD2597AA0700582947 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AF8BC2597AA0700582947 /* GenericViewController.swift */; };
 		7C4AF8BF2597C8DB00582947 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AF8BE2597C8DB00582947 /* Extensions.swift */; };
+		7C4AF8CA25980ED800582947 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 7C4AF8C925980ED800582947 /* tessdata */; };
+		7C4AF8D02598F79300582947 /* LoadPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4AF8CE2598F79300582947 /* LoadPinViewController.swift */; };
+		7C4AF8D12598F79300582947 /* LoadPinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C4AF8CF2598F79300582947 /* LoadPinViewController.xib */; };
+		7C8C5B5E259A2CDE00CE8C20 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C5B5D259A2CDE00CE8C20 /* HomeViewModel.swift */; };
+		9220021459661CBBE9B323D7 /* Pods_ReenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A1909129A7C3287816A5E9 /* Pods_ReenTests.framework */; };
+		D1D0A9C7C88E4875AD365997 /* Pods_Reen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A939B5A88E1AFF0BFD3AFF /* Pods_Reen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B6AFB5EAEB3EC0D6DB6AF54 /* Pods_Reen_ReenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reen_ReenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A1E67E5CDB8FC79445AB91 /* Pods-Reen-ReenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reen-ReenUITests.release.xcconfig"; path = "Target Support Files/Pods-Reen-ReenUITests/Pods-Reen-ReenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C4AF8812597A1D900582947 /* Reen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C4AF8842597A1D900582947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C4AF88D2597A1DB00582947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +60,19 @@
 		7C4AF8B82597A87300582947 /* HomeViewControllerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewControllerViewController.xib; sourceTree = "<group>"; };
 		7C4AF8BC2597AA0700582947 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
 		7C4AF8BE2597C8DB00582947 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7C4AF8C12597F49E00582947 /* CropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CropViewController.framework; path = Carthage/Build/iOS/CropViewController.framework; sourceTree = "<group>"; };
+		7C4AF8C625980DE100582947 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = Carthage/Build/iOS/Static/TesseractOCR.framework; sourceTree = "<group>"; };
+		7C4AF8C925980ED800582947 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		7C4AF8CE2598F79300582947 /* LoadPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPinViewController.swift; sourceTree = "<group>"; };
+		7C4AF8CF2598F79300582947 /* LoadPinViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadPinViewController.xib; sourceTree = "<group>"; };
+		7C8C5B5D259A2CDE00CE8C20 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		80C3F6AA5D042C951962DE27 /* Pods-Reen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reen.debug.xcconfig"; path = "Target Support Files/Pods-Reen/Pods-Reen.debug.xcconfig"; sourceTree = "<group>"; };
+		98A939B5A88E1AFF0BFD3AFF /* Pods_Reen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A823F9248166E36D80375F1D /* Pods-Reen-ReenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reen-ReenUITests.debug.xcconfig"; path = "Target Support Files/Pods-Reen-ReenUITests/Pods-Reen-ReenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFA089E3CAE6A1C8C43DF8F /* Pods-ReenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReenTests.debug.xcconfig"; path = "Target Support Files/Pods-ReenTests/Pods-ReenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4C97AF55A36A9EA499D5DD4 /* Pods-ReenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReenTests.release.xcconfig"; path = "Target Support Files/Pods-ReenTests/Pods-ReenTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1A1909129A7C3287816A5E9 /* Pods_ReenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC652B23CACF53B139BD12D /* Pods-Reen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reen.release.xcconfig"; path = "Target Support Files/Pods-Reen/Pods-Reen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D0A9C7C88E4875AD365997 /* Pods_Reen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9220021459661CBBE9B323D7 /* Pods_ReenTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +96,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E5C6BD8DFCA454F04D541C1 /* Pods_Reen_ReenUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033F471E9986203DEA6B0CDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80C3F6AA5D042C951962DE27 /* Pods-Reen.debug.xcconfig */,
+				FFC652B23CACF53B139BD12D /* Pods-Reen.release.xcconfig */,
+				A823F9248166E36D80375F1D /* Pods-Reen-ReenUITests.debug.xcconfig */,
+				77A1E67E5CDB8FC79445AB91 /* Pods-Reen-ReenUITests.release.xcconfig */,
+				BCFA089E3CAE6A1C8C43DF8F /* Pods-ReenTests.debug.xcconfig */,
+				D4C97AF55A36A9EA499D5DD4 /* Pods-ReenTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7C4AF8782597A1D900582947 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +123,8 @@
 				7C4AF89A2597A1DB00582947 /* ReenTests */,
 				7C4AF8A52597A1DB00582947 /* ReenUITests */,
 				7C4AF8822597A1D900582947 /* Products */,
+				7C4AF8C02597F49E00582947 /* Frameworks */,
+				033F471E9986203DEA6B0CDC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +141,9 @@
 		7C4AF8832597A1D900582947 /* Reen */ = {
 			isa = PBXGroup;
 			children = (
+				7C4AF8C925980ED800582947 /* tessdata */,
 				7C4AF8BB2597A99400582947 /* shared */,
+				7C4AF8CD2598F74F00582947 /* LoadPinViewController */,
 				7C4AF8B62597A83A00582947 /* HomeViewController */,
 				7C4AF8842597A1D900582947 /* AppDelegate.swift */,
 				7C4AF88D2597A1DB00582947 /* Assets.xcassets */,
@@ -132,6 +174,7 @@
 		7C4AF8B62597A83A00582947 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7C8C5B5C259A2C6F00CE8C20 /* HomeViewModel */,
 				7C4AF8B72597A87300582947 /* HomeViewControllerViewController.swift */,
 				7C4AF8B82597A87300582947 /* HomeViewControllerViewController.xib */,
 			);
@@ -147,6 +190,35 @@
 			path = shared;
 			sourceTree = "<group>";
 		};
+		7C4AF8C02597F49E00582947 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C4AF8C625980DE100582947 /* TesseractOCR.framework */,
+				7C4AF8C12597F49E00582947 /* CropViewController.framework */,
+				98A939B5A88E1AFF0BFD3AFF /* Pods_Reen.framework */,
+				3B6AFB5EAEB3EC0D6DB6AF54 /* Pods_Reen_ReenUITests.framework */,
+				E1A1909129A7C3287816A5E9 /* Pods_ReenTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C4AF8CD2598F74F00582947 /* LoadPinViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C4AF8CE2598F79300582947 /* LoadPinViewController.swift */,
+				7C4AF8CF2598F79300582947 /* LoadPinViewController.xib */,
+			);
+			path = LoadPinViewController;
+			sourceTree = "<group>";
+		};
+		7C8C5B5C259A2C6F00CE8C20 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7C8C5B5D259A2CDE00CE8C20 /* HomeViewModel.swift */,
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C4AF8AB2597A1DB00582947 /* Build configuration list for PBXNativeTarget "Reen" */;
 			buildPhases = (
+				88043F3F3E602259074BAABC /* [CP] Check Pods Manifest.lock */,
 				7C4AF87D2597A1D900582947 /* Sources */,
 				7C4AF87E2597A1D900582947 /* Frameworks */,
 				7C4AF87F2597A1D900582947 /* Resources */,
+				A993EF3475954EA52B451B0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C4AF8AE2597A1DB00582947 /* Build configuration list for PBXNativeTarget "ReenTests" */;
 			buildPhases = (
+				667643C729706DD97E3F563C /* [CP] Check Pods Manifest.lock */,
 				7C4AF8932597A1DB00582947 /* Sources */,
 				7C4AF8942597A1DB00582947 /* Frameworks */,
 				7C4AF8952597A1DB00582947 /* Resources */,
@@ -189,9 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C4AF8B12597A1DB00582947 /* Build configuration list for PBXNativeTarget "ReenUITests" */;
 			buildPhases = (
+				47F2B5E1B57307D38413494A /* [CP] Check Pods Manifest.lock */,
 				7C4AF89E2597A1DB00582947 /* Sources */,
 				7C4AF89F2597A1DB00582947 /* Frameworks */,
 				7C4AF8A02597A1DB00582947 /* Resources */,
+				066A4CD685D98359EFB33D6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C4AF8BA2597A87300582947 /* HomeViewControllerViewController.xib in Resources */,
+				7C4AF8CA25980ED800582947 /* tessdata in Resources */,
+				7C4AF8D12598F79300582947 /* LoadPinViewController.xib in Resources */,
 				7C4AF8912597A1DB00582947 /* LaunchScreen.storyboard in Resources */,
 				7C4AF88E2597A1DB00582947 /* Assets.xcassets in Resources */,
 			);
@@ -273,15 +352,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		066A4CD685D98359EFB33D6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reen-ReenUITests/Pods-Reen-ReenUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reen-ReenUITests/Pods-Reen-ReenUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reen-ReenUITests/Pods-Reen-ReenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47F2B5E1B57307D38413494A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reen-ReenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		667643C729706DD97E3F563C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88043F3F3E602259074BAABC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A993EF3475954EA52B451B0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reen/Pods-Reen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reen/Pods-Reen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reen/Pods-Reen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7C4AF87D2597A1D900582947 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7C4AF8BD2597AA0700582947 /* GenericViewController.swift in Sources */,
+				7C8C5B5E259A2CDE00CE8C20 /* HomeViewModel.swift in Sources */,
 				7C4AF8B92597A87300582947 /* HomeViewControllerViewController.swift in Sources */,
 				7C4AF8852597A1D900582947 /* AppDelegate.swift in Sources */,
 				7C4AF8BF2597C8DB00582947 /* Extensions.swift in Sources */,
+				7C4AF8D02598F79300582947 /* LoadPinViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +546,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -422,6 +607,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -444,10 +630,17 @@
 		};
 		7C4AF8AC2597A1DB00582947 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80C3F6AA5D042C951962DE27 /* Pods-Reen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KQV6HVZWR;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+				);
 				INFOPLIST_FILE = Reen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,10 +656,17 @@
 		};
 		7C4AF8AD2597A1DB00582947 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC652B23CACF53B139BD12D /* Pods-Reen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KQV6HVZWR;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Static",
+				);
 				INFOPLIST_FILE = Reen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,6 +682,7 @@
 		};
 		7C4AF8AF2597A1DB00582947 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCFA089E3CAE6A1C8C43DF8F /* Pods-ReenTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +705,7 @@
 		};
 		7C4AF8B02597A1DB00582947 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4C97AF55A36A9EA499D5DD4 /* Pods-ReenTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -526,6 +728,7 @@
 		};
 		7C4AF8B22597A1DB00582947 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A823F9248166E36D80375F1D /* Pods-Reen-ReenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +749,7 @@
 		};
 		7C4AF8B32597A1DB00582947 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A1E67E5CDB8FC79445AB91 /* Pods-Reen-ReenUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

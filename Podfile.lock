@@ -1,0 +1,20 @@
+PODS:
+  - CropViewController (2.5.5)
+  - RKDropdownAlert (0.3.0)
+
+DEPENDENCIES:
+  - CropViewController
+  - RKDropdownAlert (~> 0.3)
+
+SPEC REPOS:
+  trunk:
+    - CropViewController
+    - RKDropdownAlert
+
+SPEC CHECKSUMS:
+  CropViewController: bd3ff11eeeaadc1e267bb9c3f3e9ee67a52d3285
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+
+PODFILE CHECKSUM: acc5e4b1e4497e381cd2f3abf22a3ca38aa720ec
+
+COCOAPODS: 1.10.0

@@ -32,6 +32,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Reen want to extract pin from the selected airtime</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Reen want to extract pin from the selected airtime</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Access is needed to give friends airtime</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
