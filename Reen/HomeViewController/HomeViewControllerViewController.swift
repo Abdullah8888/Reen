@@ -90,6 +90,7 @@ UIImagePickerControllerDelegate & UINavigationControllerDelegate, CropViewContro
     @IBAction func scanAction(_ sender: UIButton) {
         let imagePickerViewController = UIImagePickerController()
         imagePickerViewController.delegate  = self
+        imagePickerViewController.cameraFlashMode = .auto
         //imagePickerViewController.allowsEditing = true
         //imagePickerViewController.showsCameraControls = true
         let actionSheet = UIAlertController(title: "Photo Source" , message: "Choose a source", preferredStyle: .actionSheet)

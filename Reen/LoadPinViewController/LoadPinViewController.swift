@@ -90,14 +90,21 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
             || pin.count == 20 || pin.count == 21 {
             
             if pin.contains(" ") {
-                self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
-                self.pinLbl?.text = ""
-                self.pinLbl?.text =  "Pin: \(self.pinNumber)"
+                let isFirstCharacterNumber = String(pin.prefix(0)).isValidNumericValueOnly()
+                if isFirstCharacterNumber == true {
+                    self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
+                    self.pinLbl?.text = ""
+                    self.pinLbl?.text =  "Pin: \(self.pinNumber)"
+                }
+                
             }
             else if pin.contains("-") {
-                self.pinNumber = pin.replacingOccurrences(of: "-", with: "")
-                self.pinLbl?.text = ""
-                self.pinLbl?.text = "Pin: \(self.pinNumber)" 
+                 let isFirstCharacterNumber = String(pin.prefix(0)).isValidNumericValueOnly()
+                 if isFirstCharacterNumber == true {
+                     self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
+                     self.pinLbl?.text = ""
+                     self.pinLbl?.text =  "Pin: \(self.pinNumber)"
+                 }
             }
             else {
                 self.displayDropDownAlertWithTitle(title: "Fail to get pin", message: "Please make sure you only crop the pin", error: true)
@@ -146,15 +153,19 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
         case "MTN":
             self.ussdCode = "*555*"
             self.ussdCodeForFriend = "*777*"
+            self.sendToMeLbl?.text = "\(self.ussdCode)\(self.pinNumber)"
         case "9Mobile":
             self.ussdCode = "*222*"
             self.ussdCodeForFriend = "*222*"
+            self.sendToMeLbl?.text = "\(self.ussdCode)\(self.pinNumber)"
         case "Glo":
             self.ussdCode = "*123*"
             self.ussdCodeForFriend = ""
+            self.sendToMeLbl?.text = "\(self.ussdCode)\(self.pinNumber)"
         case "Airtel":
             self.ussdCode = "*126*"
             self.ussdCodeForFriend = ""
+            self.sendToMeLbl?.text = "\(self.ussdCode)\(self.pinNumber)"
         default:
             print("default guy")
         }

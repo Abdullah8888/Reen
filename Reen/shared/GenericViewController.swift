@@ -61,6 +61,6 @@ class GenericViewController: UIViewController {
     }
     
     public func displayDropDownAlertWithTitle(title: String, message: String, error: Bool) {
-        RKDropdownAlert.title(title, message: message, backgroundColor: error ? UIColor.init(hex: "f05858") : UIColor.init(hex: "66bb6a"), textColor: UIColor.white, time: 2)
+        RKDropdownAlert.title(title, message: message, backgroundColor: error ? UIColor.init(hex: "f05858") : UIColor.init(hex: "66bb6a"), textColor: UIColor.white, time: error ? 3 : 2)
     }
 }
