@@ -41,5 +41,6 @@ extension String {
 //MARK: NSNotification Message Identifiers
 extension NSNotification.Name {
     static let DidGetTextFromCropping = Notification.Name("DidGetTextFromCropping")
+    static let CameraNotAvailable = Notification.Name("CameraNotAvailable")
 }
 

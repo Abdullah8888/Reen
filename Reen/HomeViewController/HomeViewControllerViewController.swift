@@ -79,7 +79,7 @@ UIImagePickerControllerDelegate & UINavigationControllerDelegate, CropViewContro
         } else {
             // Fallback on earlier versions
             print("please update to iOS 13 or higher")
-            self.displayDropDownAlertWithTitle(title: "iOS ver not supported",
+            self.displayDropDownAlertWithTitle(title: "iOS version not supported",
                                                message: "Please update to iOS 13 or higher",
                                                error: true)
         }
@@ -88,23 +88,32 @@ UIImagePickerControllerDelegate & UINavigationControllerDelegate, CropViewContro
     }
 
     @IBAction func scanAction(_ sender: UIButton) {
-        let imagePickerViewController = UIImagePickerController()
-        imagePickerViewController.delegate  = self
-        imagePickerViewController.cameraFlashMode = .auto
-        //imagePickerViewController.allowsEditing = true
-        //imagePickerViewController.showsCameraControls = true
-        let actionSheet = UIAlertController(title: "Photo Source" , message: "Choose a source", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
-            imagePickerViewController.sourceType = .camera
-            self.present(imagePickerViewController, animated: true, completion: nil)
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
-            imagePickerViewController.sourceType = .photoLibrary
-            self.present(imagePickerViewController, animated: true, completion: nil)
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            
+            let imagePickerViewController = UIImagePickerController()
+            
+        
+            let actionSheet = UIAlertController(title: "Photo Source" , message: "Choose a source", preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+                imagePickerViewController.sourceType = .camera
+                imagePickerViewController.allowsEditing = true
+                imagePickerViewController.delegate  = self
+                self.present(imagePickerViewController, animated: true, completion: nil)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
+                imagePickerViewController.sourceType = .photoLibrary
+                imagePickerViewController.allowsEditing = true
+                imagePickerViewController.delegate  = self
+                self.present(imagePickerViewController, animated: true, completion: nil)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
-        self.present(actionSheet, animated: true, completion: nil)
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+        else {
+            self.displayDropDownAlertWithTitle(title: "Camera not found", message: "Reen needs to access your camera", error: true)
+        }
+        
         
 //        let vc = LoadPinViewController(nibName: "LoadPinViewController", bundle: nil)
 //        self.navigationController?.pushViewController(vc, animated: true)

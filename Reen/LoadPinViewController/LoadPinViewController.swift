@@ -88,23 +88,16 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
     func validatePin(pin: String) {
         if pin.count == 17 || pin.count == 18 || pin.count == 19
             || pin.count == 20 || pin.count == 21 {
-            
             if pin.contains(" ") {
-                let isFirstCharacterNumber = String(pin.prefix(0)).isValidNumericValueOnly()
-                if isFirstCharacterNumber == true {
-                    self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
-                    self.pinLbl?.text = ""
-                    self.pinLbl?.text =  "Pin: \(self.pinNumber)"
-                }
-                
+                self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
+                self.pinLbl?.text = ""
+                self.pinLbl?.text =  "Pin: \(self.pinNumber)"
+
             }
             else if pin.contains("-") {
-                 let isFirstCharacterNumber = String(pin.prefix(0)).isValidNumericValueOnly()
-                 if isFirstCharacterNumber == true {
-                     self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
-                     self.pinLbl?.text = ""
-                     self.pinLbl?.text =  "Pin: \(self.pinNumber)"
-                 }
+                 self.pinNumber = pin.replacingOccurrences(of: " ", with: "")
+                 self.pinLbl?.text = ""
+                 self.pinLbl?.text =  "Pin: \(self.pinNumber)"
             }
             else {
                 self.displayDropDownAlertWithTitle(title: "Fail to get pin", message: "Please make sure you only crop the pin", error: true)
