@@ -19,6 +19,7 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
     @IBOutlet weak var pinLbl: UILabel?
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint?
     @IBOutlet weak var dropArrowImage: UIImageView?
+    @IBOutlet weak var backArrow: UIImageView?
     @IBOutlet weak var networkTextField: UITextField?
     @IBOutlet weak var loadForFriendView: UIView?
     @IBOutlet weak var sendToMeView: UIView?
@@ -36,25 +37,16 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar(state: .withBackText)
-        self.sendToMeView?.layer.borderWidth = 1.5
-        self.loadForFriendView?.layer.borderWidth = 1.5
-        
-//        let tapDropArrowImgae = UITapGestureRecognizer(target: self, action: #selector(self.dropDownAction))
-//        self.dropArrowImage?.addGestureRecognizer(tapDropArrowImgae)
-        
-        let tapSendToMeView = UITapGestureRecognizer(target: self, action: #selector(self.sendToMeEAction))
-        self.sendToMeView?.addGestureRecognizer(tapSendToMeView)
-        
-        let tapLoadForFriendView = UITapGestureRecognizer(target: self, action: #selector(self.LoadForFriendAction))
-        self.loadForFriendView?.addGestureRecognizer(tapLoadForFriendView)
         
         let tapDropView = UITapGestureRecognizer(target: self, action: #selector(self.dropDownAction))
         self.dropView?.addGestureRecognizer(tapDropView)
         
+        let tapBackArrow = UITapGestureRecognizer(target: self, action: #selector(self.popViewController))
+        self.backArrow?.addGestureRecognizer(tapBackArrow)
+        
         self.tableViewHeight?.constant = 0;
         self.networkTableView?.delegate = self
         self.networkTableView?.dataSource = self
-        //self.networkTableView?.
         
         self.networkTableView?.register(UITableViewCell.self, forCellReuseIdentifier: "networkCell")
         self.dropView?.layer.borderWidth = 1
@@ -66,6 +58,7 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
             self.scrollViewTop?.constant = 0
         }
         self.networkTextField?.isUserInteractionEnabled = false
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -124,6 +117,10 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
         
     }
     
+    @objc func popViewController() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -164,50 +161,6 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
         }
         self.isClicked = false
         self.tableViewHeight?.constant = 0
-    }
-
-    
-    @objc func sendToMeEAction() {
-        if self.pinNumber != "" && self.networkName != "" {
-            let fullCode = "\(self.ussdCode)\(self.pinNumber)#"
-            let url: NSURL = URL(string: "TEL://\(fullCode)")! as NSURL
-            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-        }
-        
-    }
-    
-    @objc func LoadForFriendAction() {
-        if self.pinNumber != "" && self.networkName != "" {
-            if self.ussdCodeForFriend != "" {
-                let alertController = UIAlertController(title: "Friend Phone Number", message: "", preferredStyle: UIAlertController.Style.alert)
-                alertController.addTextField { (textField : UITextField!) -> Void in
-                    textField.placeholder = "Enter phone number"
-                }
-                
-                let okAction = UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: { alert -> Void in
-                    let firstTextField = alertController.textFields![0] as UITextField
-                    guard let phoneText = firstTextField.text else {return}
-                    self.validatePhoneNumber(phoneNumber: phoneText)
-                })
-                let cancelAction = UIAlertAction(title: "Pick from contact", style: UIAlertAction.Style.default, handler: {
-                    (action : UIAlertAction!) -> Void in
-                    self.showFriendsOnContact()
-                })
-                
-                
-                alertController.addAction(okAction)
-                alertController.addAction(cancelAction)
-                
-                self.present(alertController, animated: true, completion: nil)
-                
-            }
-            else {
-                self.displayDropDownAlertWithTitle(title: "", message: "\(self.networkName) does not have support for this", error: true)
-            }
-            
-        }
-        
-        
     }
     
     func showFriendsOnContact() {
@@ -293,8 +246,7 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
             self.isLoadForFriendSupported()
         }
         else {
-            print("please enter a vialid phone number")
-            self.displayDropDownAlertWithTitle(title: "", message: "Please enter a vialid phone number", error: true)
+            self.displayDropDownAlertWithTitle(title: "", message: "Please enter a valid phone number", error: true)
         }
     }
     
@@ -316,4 +268,54 @@ class LoadPinViewController: GenericViewController, UITableViewDelegate, UITable
         }
         
     }
+    
+    @IBAction func rechargeMe(_ sender: UIButton) {
+        if self.pinNumber != "" && self.networkName != "" {
+            let fullCode = "\(self.ussdCode)\(self.pinNumber)#"
+            let url: NSURL = URL(string: "TEL://\(fullCode)")! as NSURL
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }
+        else {
+            self.displayDropDownAlertWithTitle(title: "", message: "Please select a network", error: true)
+        }
+    }
+    
+    
+    @IBAction func sendToMyFriend(_ sender: UIButton) {
+        if self.pinNumber != "" && self.networkName != "" {
+            if self.ussdCodeForFriend != "" {
+                let alertController = UIAlertController(title: "Friend Phone Number", message: "", preferredStyle: UIAlertController.Style.alert)
+                alertController.addTextField { (textField : UITextField!) -> Void in
+                    textField.placeholder = "Enter phone number"
+                }
+                
+                let okAction = UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: { alert -> Void in
+                    let firstTextField = alertController.textFields![0] as UITextField
+                    guard let phoneText = firstTextField.text else {return}
+                    self.validatePhoneNumber(phoneNumber: phoneText)
+                })
+                let pickFromContactAction = UIAlertAction(title: "Pick from contact", style: UIAlertAction.Style.default, handler: {
+                    (action : UIAlertAction!) -> Void in
+                    self.showFriendsOnContact()
+                })
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
+                
+                
+                alertController.addAction(okAction)
+                alertController.addAction(pickFromContactAction)
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+            }
+            else {
+                self.displayDropDownAlertWithTitle(title: "", message: "\(self.networkName) does not have support for this", error: true)
+            }
+            
+        }
+        else {
+            self.displayDropDownAlertWithTitle(title: "", message: "Please select a network", error: true)
+        }
+    }
+    
 }

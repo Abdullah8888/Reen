@@ -25,10 +25,10 @@ UIImagePickerControllerDelegate & UINavigationControllerDelegate, CropViewContro
         // Do any additional setup after loading the view.
         self.setNavigationBar(state: .withEmpty)
         self.pinImage?.layer.borderWidth = 1
-        self.pinImage?.layer.borderColor = UIColor.black.cgColor
+        //self.pinImage?.layer.borderColor = UIColor.white.cgColor
         //let gg = Tess
         //if let tessaract = GBTess
-        
+        self.navigationController?.navigationBar.isHidden = true
         
     }
     
@@ -111,7 +111,7 @@ UIImagePickerControllerDelegate & UINavigationControllerDelegate, CropViewContro
             self.present(actionSheet, animated: true, completion: nil)
         }
         else {
-            self.displayDropDownAlertWithTitle(title: "Camera not found", message: "Reen needs to access your camera", error: true)
+            self.displayDropDownAlertWithTitle(title: "Camera not found", message: "", error: true)
         }
         
         
